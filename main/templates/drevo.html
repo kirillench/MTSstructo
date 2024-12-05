@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}<title>Структура компании</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{%endblock %}
+
+{% block content %}
+<div id="overlay"></div>
+    <div id="modal">
+        <h3 id="modal-title"></h3>
+        <p id="modal-position"></p>
+        <p id="modal-email"></p>
+        <p id="modal-phone_number"></p>
+        <button id="close-modal">Закрыть</button>
+    </div>
+
+    <ul>
+        {% include 'hierarchy.html' with nodes=hierarchy %}
+    </ul>
+
+    <script>
+        document.querySelectorAll('.employee-node').forEach(node => {
+            node.addEventListener('click', () => {
+                const name = node.dataset.name;
+                const surname = node.dataset.surname;
+                const position = node.dataset.position;
+                const email = node.dataset.email;
+                const phone_number = node.dataset.phone_number;
+
+                document.getElementById('modal-title').innerText = `${name} ${surname}`;
+                document.getElementById('modal-position').innerText = `Должность: ${position}`;
+                document.getElementById('modal-email').innerText = `Email: ${email}`;
+                document.getElementById('modal-phone_number').innerText = `Телефон: +${phone_number}`;
+
+                document.getElementById('modal').style.display = 'block';
+                document.getElementById('overlay').style.display = 'block';
+            });
+        });
+
+        document.getElementById('close-modal').addEventListener('click', () => {
+            document.getElementById('modal').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        });
+
+        document.getElementById('overlay').addEventListener('click', () => {
+            document.getElementById('modal').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        });
+
+    </script>
+</body>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% for node in nodes %}
+<li>
+    <div class="employee-node" 
+         data-name="{{ node.employee.name }}" 
+         data-surname="{{ node.employee.surname }}" 
+         data-position="{{ node.employee.position }}" 
+         data-email="{{ node.employee.email }}"
+         data-phone_number="{{ node.employee.phone_number }}">
+        {{ node.employee.position }} - {{ node.employee.name }} {{ node.employee.surname }}
+    </div>
+    {% if node.children %}
+    <ul>
+        {% include 'hierarchy.html' with nodes=node.children %}
+    </ul>
+    {% endif %}
+</li>
+{% endfor %}

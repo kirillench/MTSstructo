@@ -1,0 +1,159 @@
+/* Стили для страницы поиска */
+.search-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.search-header {
+    margin-bottom: 30px;
+}
+
+.search-header h1 {
+    font-size: 2em;
+    font-weight: bold;
+    color: rgba(120,0,40);
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+
+}
+
+.search-input {
+    width: 26%;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: .4em;
+    margin-right: 10px;
+    background: rgba(0,0,0,0.7);
+    box-shadow: 0 0 15px rgba(223,0,0,0.3);
+    color: rgba(180,0,0);
+}
+
+.search-button {
+    padding: 10px 15px;
+    background: rgba(150,0,0,0.72);
+    color: white;
+    border: none;
+    box-shadow: 0 0 10px rgba(223,0,0,0.3);
+    border-radius: .4em;
+    cursor: pointer;
+    font-size: 16px;
+    transition: box-shadow 0.7s, background-color 0.3s;
+}
+
+
+.search-button:hover {
+    box-shadow: 0 0 10px rgba(223,0,0,0.3), 0 0 30px rgba(223,0,0,0.3), 0 0 40px rgba(223,0,0,0.3),0 0 50px rgba(223,0,0,0.3);
+    animation: glow 1s infinite alternative;
+    transition: background-color 0.3s;
+    transition: box-shadow 0.7s, background-color 0.3s;
+
+}
+/* Использование Grid для карточек сотрудников */
+.search-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Карточки будут равномерно распределяться */
+    gap: 20px;
+    justify-items: stretch;
+    max-width: 80%;
+    margin: 2em auto 25em auto;
+
+}
+
+.employee-card {
+    color: #fff;
+    background-color: #c1c1c1;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    height: auto;
+    background: rgba(0,0,0,0.75);
+    box-shadow: 0 0 15px rgba(223,0,0,0.3);
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+.employee-card:hover{
+    background-color: rgba(0, 0, 0, 0.9);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(223,0,0,0.3);
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+.employee-card h3 {
+    color: rgba(150,0,40);
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.employee-card a{
+    color: rgba(120,0,40);
+    text-decoration: none;
+    transition: color 0.5s, text-decoration 0.5s;
+}
+.employee-card a:hover{
+    color: rgba(140,0,40);
+    text-decoration: underline;
+    transition: color 0.5s, text-decoration 0.5s;
+}
+
+
+.employee-card p {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.employee-card .view-profile {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #0044cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: auto; /* Кнопка будет всегда внизу */
+}
+
+.employee-card .view-profile:hover {
+    background-color: #003399;
+}
+
+p.undefound{
+    position: relative;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    font-size: 2em;
+    padding: .5em;
+    max-width: 50%;
+    border-radius: .5em;
+    color: #fff;
+    margin: 2em 0 13em 0;
+    box-shadow: 0 0 15px rgba(200,0,0,0.6);
+    background: rgba(0,0,0,0.75);
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+p.undefound:hover{
+    font-style: var(--font-family-sans-serif);
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 8px 20px rgba(223, 0, 0, 0.5);
+    box-shadow: 0 0 15px rgba(223,0,0,0.3);
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+    .search-input {
+        width: 200px;
+    }
+
+    .search-results {
+        grid-template-columns: 1fr; /* На мобильных устройствах карточки будут занимать всю ширину */
+    }
+}
+

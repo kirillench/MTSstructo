@@ -1,0 +1,96 @@
+        body {
+            font-style: var(--font-family-sans-serif)
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            overflow: auto;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .employee-node {
+            padding: 20px 10px;
+            margin: .5em 0;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+            color: #fff;
+            background: rgba(0,0,0,0.6);
+            box-shadow: 4px 4px 15px rgba(223,0,0,0.4);
+            transition: background-color 0.5s, box-shadow 0.5s, transform 0.5s;
+        }
+        .employee-node:hover {
+            transition: background-color 0.5s, box-shadow 0.5s, transform 0.5s;
+            background-color: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 8px 20px rgba(223, 0, 0, 0.55);
+            transform: scale(1.05);
+        }
+
+        #modal {
+            color: #fff;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.95);
+            box-shadow: 0 0 30px rgba(223,0,0,0.6);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            width: 100%;
+            z-index: 1000;
+            display: none;
+        }
+
+        #modal h3 {
+            margin: 0 0 10px;
+            font-size: 18px;
+            color: #fff;
+        }
+
+        #modal p {
+            margin: 2em 0;
+            font-size: 14px;
+            color: #fff;
+
+        }
+
+        #modal button {
+            display: block;
+            margin: 0 auto;
+            padding: 1.5em 2em;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: rgba(180,0,0,0.6);
+            box-shadow: 0px 0px 15px rgba(223,0,0,0.4);
+            transition: background-color 0.5s, box-shadow 0.5s, transform 0.5s;
+        }
+
+        #modal button:hover {
+            transition: background-color 0.5s, box-shadow 0.5s, transform 0.5s;
+            background-color: rgba(223, 0, 0, 0.55);
+            box-shadow: 0 0 20px rgba(223, 0, 0, 0.55);
+            transform: scale(1.05);
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+        ul li ul{
+            margin-left: 2em;
+
+        }
+         ul li ul li{
+            margin-left: 2em;
+        }
